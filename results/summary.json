@@ -108,5 +108,67 @@
    "mean_seconds": 106.4044108731406,
    "tasks_solved_any_seed": 10
   }
+ },
+ "qwen2.5-coder:7b": {
+  "rvv_nodoc": {
+   "n": 42,
+   "pass": 0,
+   "first_pass": 0,
+   "compiled_first": 3,
+   "hallucinated_first": 33,
+   "vectorized_pass": 0,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 368.07142857142856,
+   "mean_seconds": 11.51998071443467,
+   "tasks_solved_any_seed": 0
+  },
+  "xdsp_nodoc": {
+   "n": 42,
+   "pass": 11,
+   "first_pass": 11,
+   "compiled_first": 15,
+   "hallucinated_first": 25,
+   "vectorized_pass": 0,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 258.5952380952381,
+   "mean_seconds": 8.860185918353853,
+   "tasks_solved_any_seed": 4
+  },
+  "xdsp_full": {
+   "n": 42,
+   "pass": 16,
+   "first_pass": 16,
+   "compiled_first": 30,
+   "hallucinated_first": 2,
+   "vectorized_pass": 16,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 175.95238095238096,
+   "mean_seconds": 8.194941480954489,
+   "tasks_solved_any_seed": 6
+  },
+  "xdsp_rag_typed": {
+   "n": 42,
+   "pass": 12,
+   "first_pass": 12,
+   "compiled_first": 20,
+   "hallucinated_first": 2,
+   "vectorized_pass": 11,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 208.66666666666666,
+   "mean_seconds": 8.57426675160726,
+   "tasks_solved_any_seed": 5
+  },
+  "xdsp_agent_typed": {
+   "n": 42,
+   "pass": 8,
+   "first_pass": 7,
+   "compiled_first": 16,
+   "hallucinated_first": 12,
+   "vectorized_pass": 7,
+   "mean_llm_calls": 5.023809523809524,
+   "mean_output_tokens": 1087.8809523809523,
+   "mean_seconds": 43.147330579303556,
+   "tasks_solved_any_seed": 5
+  }
  }
 }

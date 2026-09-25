@@ -38,22 +38,20 @@ compared with compilers and hand-written code.
 ## Results
 
 <!-- results:start -->
-| Condition | qwen3-coder:30b: pass |
-|---|---|
-| Public ISA (RVV intrinsics), no docs | 2/42 = 5% [1-16] |
-| Unseen ISA, no docs | 0/42 = 0% [0-8] |
-| Unseen ISA, full manual in prompt | 13/42 = 31% [19-46] |
-| Unseen ISA, retrieved manual sections | 0/42 = 0% [0-8] |
-| Agent: retrieval + search tool + toolchain repair loop | 19/42 = 45% [31-60] |
-| Agent + optimisation loop (instruction counts) | 21/42 = 50% [36-64] |
-| Unseen ISA, type-aware retrieval (core ops + examples) | 17/42 = 40% [27-56] |
-| Agent with type-aware retrieval | 26/42 = 62% [47-75] |
-| Agent with type-aware retrieval + optimisation loop | 24/42 = 57% [42-71] |
+| Condition | qwen2.5-coder:7b: pass | qwen3-coder:30b: pass |
+|---|---|---|
+| Public ISA (RVV intrinsics), no docs | 0/42 (0 vectorised) | 2/42 (0 vectorised) |
+| Unseen ISA, no docs | 11/42 (0 vectorised) | 0/42 (0 vectorised) |
+| Unseen ISA, full manual in prompt | 16/42 (16 vectorised) | 13/42 (13 vectorised) |
+| Unseen ISA, retrieved manual sections | - | 0/42 (0 vectorised) |
+| Agent: retrieval + search tool + toolchain repair loop | - | 19/42 (18 vectorised) |
+| Agent + optimisation loop (instruction counts) | - | 21/42 (21 vectorised) |
+| Unseen ISA, type-aware retrieval (core ops + examples) | 12/42 (11 vectorised) | 17/42 (17 vectorised) |
+| Agent with type-aware retrieval | 8/42 (7 vectorised) | 26/42 (22 vectorised) |
+| Agent with type-aware retrieval + optimisation loop | - | 24/42 (24 vectorised) |
 
-Pass = bit-exact on every test case (14 kernels x 3 seeds per cell; Wilson 95% interval in brackets). Full tables, per-task results, the optimisation loop and baselines: [docs/RESULTS.md](docs/RESULTS.md).
+Pass = bit-exact on every test case (14 kernels x 3 seeds per cell). Scalar C is allowed as a fallback, so the number that matters is the vectorised passes in brackets: the 7B model's passes without documentation are all scalar code. Full tables, per-task results, the optimisation loop and baselines: [docs/RESULTS.md](docs/RESULTS.md).
 <!-- results:end -->
-
-A second model (qwen2.5-coder 7B, 5 conditions) is being evaluated; `results/episodes.jsonl` may contain its partial episodes, which the report excludes until the run is complete.
 
 What went wrong while building the agent, and what changed because of it, is in
 [docs/DEVLOG.md](docs/DEVLOG.md): invented operations that spelling-based suggestions could not fix, repair loops

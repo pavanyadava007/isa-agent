@@ -189,9 +189,10 @@ def readme_block(summ: dict, base: dict, mlir: dict, eps: list[dict]) -> None:
         cells = []
         for m in sorted(summ):
             s = summ[m].get(c)
-            cells.append(pct(s["pass"], s["n"]) if s else "-")
+            cells.append(f"{s['pass']}/{s['n']} ({s['vectorized_pass']} vectorised)" if s else "-")
         R.append(f"| {LABEL[c]} | " + " | ".join(cells) + " |")
-    R += ["", "Pass = bit-exact on every test case (14 kernels x 3 seeds per cell; Wilson 95% interval in brackets). "
+    R += ["", "Pass = bit-exact on every test case (14 kernels x 3 seeds per cell). Scalar C is allowed as a fallback, so the "
+          "number that matters is the vectorised passes in brackets: the 7B model's passes without documentation are all scalar code. "
           "Full tables, per-task results, the optimisation loop and baselines: [docs/RESULTS.md](docs/RESULTS.md).", ""]
     new = txt[: txt.index(a) + len(a)] + "\n".join(R) + txt[txt.index(b):]
     readme.write_text(new)

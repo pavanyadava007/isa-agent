@@ -53,9 +53,27 @@ Both are reported.
 
 ## 6. MLIR comparison: specialisation, not the compiler, made the difference
 
-Observation: the ONNX -> MLIR -> LLVM float FIR used about 4x fewer instructions than clang on the C
+Observation: the ONNX -> MLIR -> LLVM float FIR used 3.6x fewer instructions than clang on the C
 reference. The ONNX path knows the 16 taps at compile time, so LLVM unrolls the tap loop completely.
 
 Change: C variants with the same constant taps and LMUL=1 variants of every path. With constant taps, plain C
 through clang is as fast as or faster than the MLIR path, and MLIR's affine super-vectoriser was slower than
 MLIR loops + LLVM's loop vectoriser in every measured case.
+
+## 7. "Pass" is not the right headline; vectorised passes are
+
+Observation: qwen2.5-coder 7B passed 11 of 42 kernels with no documentation at all. All 11 were plain scalar C,
+which the rules allow as a fallback, so they say nothing about using the ISA. For the 30B model the typed agent
+passed 26 of 42, of which 22 were vectorised.
+
+Change: the README table reports vectorised passes next to passes; the per-task cost table already used only
+vectorised kernels.
+
+## 8. The repair loop hurts the small model
+
+Observation: for qwen2.5-coder 7B the full manual gave 16 of 42 vectorised passes, type-aware retrieval 11, and the
+agent with repair rounds only 7. The 30B model gained from the same loop (17 -> 22 vectorised). Likely cause, not yet tested:
+the 7B model loses track in long multi-turn contexts full of compiler logs.
+
+No change: kept as a result. A smaller model would need shorter feedback (only the first error, only the
+relevant manual entry) or a single-turn repair prompt.
