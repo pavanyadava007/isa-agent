@@ -1,0 +1,14 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -e ".[dev]"
+      - run: ruff check isaagent scripts tests
+      - run: docker build -t isa-agent-tools:latest docker/
+      - run: python -m isaagent.gen_isa && git diff --exit-code isa/ docs/XDSP_MANUAL.md
+      - run: python -m pytest -q          # unit tests + toolchain tests (references pass, sabotage fails)

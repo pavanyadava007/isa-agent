@@ -1,0 +1,112 @@
+{
+ "qwen3-coder:30b": {
+  "rvv_nodoc": {
+   "n": 42,
+   "pass": 2,
+   "first_pass": 2,
+   "compiled_first": 2,
+   "hallucinated_first": 40,
+   "vectorized_pass": 0,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 385.42857142857144,
+   "mean_seconds": 14.024805602573213,
+   "tasks_solved_any_seed": 1
+  },
+  "xdsp_nodoc": {
+   "n": 42,
+   "pass": 0,
+   "first_pass": 0,
+   "compiled_first": 1,
+   "hallucinated_first": 41,
+   "vectorized_pass": 0,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 366.6904761904762,
+   "mean_seconds": 13.619590816043672,
+   "tasks_solved_any_seed": 0
+  },
+  "xdsp_full": {
+   "n": 42,
+   "pass": 13,
+   "first_pass": 13,
+   "compiled_first": 31,
+   "hallucinated_first": 2,
+   "vectorized_pass": 13,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 304.7857142857143,
+   "mean_seconds": 15.127603457087563,
+   "tasks_solved_any_seed": 5
+  },
+  "xdsp_rag": {
+   "n": 42,
+   "pass": 0,
+   "first_pass": 0,
+   "compiled_first": 0,
+   "hallucinated_first": 35,
+   "vectorized_pass": 0,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 265.8809523809524,
+   "mean_seconds": 11.667928128015427,
+   "tasks_solved_any_seed": 0
+  },
+  "xdsp_agent": {
+   "n": 42,
+   "pass": 19,
+   "first_pass": 1,
+   "compiled_first": 4,
+   "hallucinated_first": 28,
+   "vectorized_pass": 18,
+   "mean_llm_calls": 4.357142857142857,
+   "mean_output_tokens": 1901.9285714285713,
+   "mean_seconds": 94.34302327178773,
+   "tasks_solved_any_seed": 8
+  },
+  "xdsp_opt": {
+   "n": 42,
+   "pass": 21,
+   "first_pass": 0,
+   "compiled_first": 0,
+   "hallucinated_first": 32,
+   "vectorized_pass": 21,
+   "mean_llm_calls": 5.190476190476191,
+   "mean_output_tokens": 2377.4285714285716,
+   "mean_seconds": 126.2207350560597,
+   "tasks_solved_any_seed": 10
+  },
+  "xdsp_rag_typed": {
+   "n": 42,
+   "pass": 17,
+   "first_pass": 17,
+   "compiled_first": 29,
+   "hallucinated_first": 11,
+   "vectorized_pass": 17,
+   "mean_llm_calls": 1.0,
+   "mean_output_tokens": 294.8095238095238,
+   "mean_seconds": 15.265584480194818,
+   "tasks_solved_any_seed": 7
+  },
+  "xdsp_agent_typed": {
+   "n": 42,
+   "pass": 26,
+   "first_pass": 15,
+   "compiled_first": 29,
+   "hallucinated_first": 4,
+   "vectorized_pass": 22,
+   "mean_llm_calls": 3.1904761904761907,
+   "mean_output_tokens": 1766.8095238095239,
+   "mean_seconds": 83.02335696560996,
+   "tasks_solved_any_seed": 11
+  },
+  "xdsp_opt_typed": {
+   "n": 42,
+   "pass": 24,
+   "first_pass": 16,
+   "compiled_first": 28,
+   "hallucinated_first": 10,
+   "vectorized_pass": 24,
+   "mean_llm_calls": 4.5,
+   "mean_output_tokens": 2268.5,
+   "mean_seconds": 106.4044108731406,
+   "tasks_solved_any_seed": 10
+  }
+ }
+}

@@ -1,0 +1,6 @@
+.venv/
+.work/
+__pycache__/
+*.pyc
+results/smoke.jsonl
+site/

@@ -1,0 +1,82 @@
+{
+ "fir_f32/mlir_loops+llvm_O3": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 7.82490553187174e-08,
+  "insns": 9060,
+  "vector_insn_sites": 34,
+  "n_out": 1024
+ },
+ "axpy_f32/mlir_loops+llvm_O3": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 0.0,
+  "insns": 1310,
+  "vector_insn_sites": 8,
+  "n_out": 1024
+ },
+ "fir_f32/mlir_loops+llvm_O3@lmul1": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 7.82490553187174e-08,
+  "insns": 18019,
+  "vector_insn_sites": 34,
+  "n_out": 1024
+ },
+ "axpy_f32/mlir_loops+llvm_O3@lmul1": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 0.0,
+  "insns": 2589,
+  "vector_insn_sites": 8,
+  "n_out": 1024
+ },
+ "fir_f32/mlir_affine_vec4": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 7.82490553187174e-08,
+  "insns": 10724,
+  "vector_insn_sites": 36,
+  "n_out": 1024
+ },
+ "axpy_f32/mlir_affine_vec4": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 0.0,
+  "insns": 4879,
+  "vector_insn_sites": 14,
+  "n_out": 1024
+ },
+ "fir_f32/mlir_affine_vec4@lmul1": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 7.82490553187174e-08,
+  "insns": 19811,
+  "vector_insn_sites": 36,
+  "n_out": 1024
+ },
+ "axpy_f32/mlir_affine_vec4@lmul1": {
+  "ok": true,
+  "max_rel_err_vs_onnxruntime": 0.0,
+  "insns": 4879,
+  "vector_insn_sites": 14,
+  "n_out": 1024
+ },
+ "fir_f32/c_scalar": {
+  "ok": true,
+  "insns": 128005
+ },
+ "fir_f32/c_autovec": {
+  "ok": true,
+  "insns": 32779
+ },
+ "fir_f32/c_autovec_m1": {
+  "ok": true,
+  "insns": 48138
+ },
+ "fir_f32/expert_xdsp": {
+  "ok": true,
+  "insns": 38662
+ },
+ "fir_f32/c_const_taps_autovec": {
+  "ok": true,
+  "insns": 6863
+ },
+ "fir_f32/c_const_taps_autovec_m1": {
+  "ok": true,
+  "insns": 13646
+ }
+}

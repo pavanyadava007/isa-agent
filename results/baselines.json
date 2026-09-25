@@ -1,0 +1,86 @@
+{
+ "vadd_sat_q15": {
+  "scalar": 12661,
+  "autovec": 598,
+  "autovec_m1": 1174,
+  "expert_xdsp": 1410
+ },
+ "dot_q15": {
+  "scalar": 8196,
+  "autovec": 1042,
+  "autovec_m1": 2067,
+  "expert_xdsp": 1288
+ },
+ "scale_q15": {
+  "scalar": 10246,
+  "autovec": 854,
+  "autovec_m1": 1686,
+  "expert_xdsp": 1155
+ },
+ "window_q15": {
+  "scalar": 12296,
+  "autovec": 1050,
+  "autovec_m1": 2074,
+  "expert_xdsp": 1411
+ },
+ "fir_q15": {
+  "scalar": 73735,
+  "autovec": 19984,
+  "autovec_m1": 28177,
+  "expert_xdsp": 9735
+ },
+ "cmag2_q15": {
+  "scalar": 10243,
+  "autovec": 906,
+  "autovec_m1": 1802,
+  "expert_xdsp": 1410
+ },
+ "cmul_q15": {
+  "scalar": 25610,
+  "autovec": 1507,
+  "autovec_m1": 2979,
+  "expert_xdsp": 2691
+ },
+ "argmax_abs_q15": {
+  "scalar": 15662,
+  "autovec": 15662,
+  "autovec_m1": 15662,
+  "expert_xdsp": 2197
+ },
+ "count_above_i32": {
+  "scalar": 6148,
+  "autovec": 2064,
+  "autovec_m1": 4113,
+  "expert_xdsp": 2308
+ },
+ "decim2_q15": {
+  "scalar": 10243,
+  "autovec": 717,
+  "autovec_m1": 1165,
+  "expert_xdsp": 1283
+ },
+ "cfar_ca_i32": {
+  "scalar": 53313,
+  "autovec": 32756,
+  "autovec_m1": 36689,
+  "expert_xdsp": 12356
+ },
+ "axpy_f32": {
+  "scalar": 8194,
+  "autovec": 1045,
+  "autovec_m1": 2068,
+  "expert_xdsp": 2818
+ },
+ "rms_f32": {
+  "scalar": 5130,
+  "autovec": 916,
+  "autovec_m1": 1555,
+  "expert_xdsp": 2063
+ },
+ "dc_remove_f32": {
+  "scalar": 12295,
+  "autovec": 1695,
+  "autovec_m1": 3101,
+  "expert_xdsp": 4368
+ }
+}
